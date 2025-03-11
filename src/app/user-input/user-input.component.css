@@ -49,12 +49,32 @@ button:hover {
   padding: 0.5rem;
   border: 1px solid #76c0ae;
   border-radius: 0.25rem;
-  background-color: #83e6c0;
-  color: #1a1f1d;
+  background-color: transparent;
+  color: #c2e9e0;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button-row button:first-child:focus {
+  outline: none;
+}
+
+.button-row button:first-child:hover {
+  background-color: #83e6c0;
+  outline: none;
+  color: black;
+}
+
+.button-row button:first-child:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: #83e6c0;
+  color: black;
 }
 
 .button-row button:last-child {
@@ -70,21 +90,21 @@ button:hover {
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.button-row button:last-child:hover,
 .button-row button:last-child:focus {
-  background-color: #e76969;
-  color: #ffffff;
-  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5),
-    -0.1rem -0.1rem 0.3rem rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  outline: none;
+}
+
+.button-row button:last-child:hover {
+  background-color: rgba(231, 105, 105, 0.8);
   outline: none;
 }
 
 .button-row button:last-child:active {
-  transform: translateY(2);
-  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
-  transition: all 0.1s ease;
+  transform: translateY(3px);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: #e76969;
 }
