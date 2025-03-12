@@ -5,12 +5,26 @@ form {
   border-radius: 4px;
   background: linear-gradient(180deg, #307e6c, #2b996d);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* When in results mode, adjust the form sizing */
+:host-context(.results-mode) form {
+  margin: 1rem;
+  max-width: none;
+  font-size: 0.9rem;
 }
 
 .input-group {
   display: flex;
   justify-content: space-evenly;
   gap: 1.5rem;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+:host-context(.results-mode) .input-group {
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 label {
@@ -30,6 +44,12 @@ input {
   background-color: transparent;
   color: #c2e9e0;
   font-size: 1rem;
+}
+
+/* Add these styles for invalid field highlighting */
+input.invalid {
+  border: 2px solid #e76969;
+  box-shadow: 0 0 5px rgba(231, 105, 105, 0.5);
 }
 
 button:hover {
@@ -107,4 +127,15 @@ button:hover {
   transform: translateY(3px);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background-color: #e76969;
+}
+
+/* Adjust button row in results mode */
+:host-context(.results-mode) .button-row {
+  flex-direction: column;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+:host-context(.results-mode) .button-row button {
+  padding: 0.3rem;
+  font-size: 0.9rem;
 }

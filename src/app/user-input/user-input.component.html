@@ -3,6 +3,7 @@
     <p>
       <label for="initial-investment">Initial Investment</label>
       <input
+        [class.invalid]="invalidFields.initialInvestment"
         name="initial-investment"
         id="initial-investment"
         type="text"
@@ -13,6 +14,7 @@
     <p>
       <label for="annual-investment">Annual Investment</label>
       <input
+        [class.invalid]="invalidFields.annualInvestment"
         name="annual-investment"
         id="annual-investment"
         type="text"
@@ -25,24 +27,28 @@
     <p>
       <label for="expected-return">Expected Return %</label>
       <input
+        [class.invalid]="invalidFields.expectedReturn"
         name="expected-return"
         id="expected-return"
         type="number"
         [(ngModel)]="enteredExpectedReturn"
+        (input)="onExpectedReturnChange($event)"
       />
     </p>
     <p>
       <label for="duration">Duration (years)</label>
       <input
+        [class.invalid]="invalidFields.duration"
         name="duration"
         id="duration"
         type="number"
         [(ngModel)]="enteredDuration"
+        (input)="onDurationChange($event)"
       />
     </p>
   </div>
   <p class="button-row">
     <button type="submit" class="submit-button">Calculate</button>
-    <button type="reset" class="clear-button">Clear</button>
+    <button type="reset" class="clear-button" (click)="onClear()">Clear</button>
   </p>
 </form>

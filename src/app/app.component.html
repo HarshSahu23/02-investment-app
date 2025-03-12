@@ -1,3 +1,10 @@
 <app-header />
-<app-user-input />
-<app-investment-results />
+<app-toast />
+<div class="app-container" [class.results-mode]="hasCalculated()">
+  <div class="input-container">
+    <app-user-input />
+  </div>
+  <div class="results-container">
+    <app-investment-results />
+  </div>
+</div>

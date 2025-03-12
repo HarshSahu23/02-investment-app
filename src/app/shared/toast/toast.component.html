@@ -1,0 +1,5 @@
+@if (toast(); as activeToast) {
+<div class="toast-container" [ngClass]="activeToast.type">
+  <div class="toast-message">{{ activeToast.message }}</div>
+</div>
+}
